@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NodeTalk 测试 beta</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link type="text/css" rel="stylesheet" href="style.css">
+		<meta name="Description" content="NodeTalk 是一个匿名的陌生人随机聊天网站，进入网站，你可以马上跟一个互不认识的陌生人聊天。通过文字逐渐相互了解。尽情享受这种从陌生人到朋友的感觉吧。" />
+		<meta name="Keywords" content="匿名聊天,陌生人聊天,在线聊天,Omegle,山寨Omegle,国内Omegle,中国Omegle" />
+		<meta name="Author" content="Longbill" />
+        <script src="js/jquery.js"></script>
+        <script>
+        function init_window()
+        {
+        	$('#main').height($(window).height()-$('#header').height());
+        	$('#content').width($('#chat_window').width()-$('#disconnectwrapper').width()*2-6);
+        	
+			var space = 50;
+			if (navigator.userAgent.match(/msie\s7/i)) space = 50;
+			if (navigator.userAgent.match(/msie\s6/i)) space = 50;
+	
+        	$('#chat_window').height($(window).height()-$('#header').height()-$('#content').height()-space);
+        }
+        init_window();
+        window.onresize = init_window;
+        var lang = 
+        {
+        	send_error:'发送失败',
+        	bye:'Bye!',
+        	online_num:'在线人数：',
+        	waiting:'等待陌生人连接...',
+        	me:'<span style="color:#333">我：</span>',
+        	stranger:'<span style="color:#333">陌生人：</span>',
+        	connected:'<span style="color:orange">连接成功，快跟对方打个招呼吧！</span>',
+        	disconnected:'对方已断开。',
+        	typing:'<span style="font-size:12px;color:#999">对方正在输入文字</span>',
+        	reconnect:'重新连接',
+        	download:'下载聊天记录',
+        	logining:'登录中..',
+        	logined:'登录成功',
+        	you_disconnect:'您已经断开',
+        	contact_me:'&nbsp;<a href="http://php.js.cn" target="_blank">留言给站长</a>',
+			new_msg:'新消息来啦！',
+			serverError: '服务器连接已断开'
+        };
+        </script>
+        <script src="js/chat.js"></script>
+    </head>
+    <body scroll="no">
+        <div id="header">
+        	<div id="header_content">
+        		<table cellpadding="0" cellspacing="0" border="0">
+        			<tr>
+        				<td><img id="logo"  src="images/logo.jpg" /></td>
+        				<td>
+							
+								
+						
+						</td>
+    	       			<td style="text-align:right" valign="middle">
+    	       				在线人数：<span id="online_num"></span>
+    	       			</td>
+    	       		</tr>
+    	       	</table>
+    	    </div>
+        </div> 
+        <div id="main">
+        	<div id="description" class="main_window" style="display:;">
+        		<div style="width:600px;margin:0 auto;text-align:center;">
+	        		<div style="height:400px;float:left; width:300px;">
+	        			<img src="images/taibei.jpg" />
+	        		</div>
+	        		<div style="height:400px;float:left; width:230px;">
+	        			<div style="margin-top:70px;">
+	        				<img src="images/title.jpg" />
+	        			</div>
+	        			<div style="margin:20px 0;margin-bottom:40px;">
+	        				<a href="javascript:start_options();"><img src="images/start.jpg" /></a>
+	        			</div>
+	        			
+	        		</div>
+        		</div>
+        		<div id="announcement">
+        			
+NodeTalk是由<a href="http://php.js.cn" target="_blank">Longbill</a>开发的一款基于NodeJS技术的匿名聊天室软件。
+					
+        		</div>
+        	</div>
+			<div id="options" class="main_window" style="display:none;">
+        		<div style="width:50%;float:left;">
+					<h2>选择城市：</h2>
+					<div id="cityarea">
+						
+						
+					</div>
+				</div>
+				<div style="width:40%;float:left;">
+					<h2>您的性别:</h2>
+					<div id="cityarea">
+						<div class="sex option" value="male">男</div>
+						<div class="sex option" value="female">女</div>
+					</div>
+					<div style="clear:both;"></div>
+					<h2>对方性别:</h2>
+					<div id="cityarea">
+						<div class="he option" value="male">男</div>
+						<div class="he option" value="female">女</div>
+						<div class="he option" value="any">不限</div>
+					</div>
+					<div style="clear:both;"></div>
+					<input id="begin-button" disabled type="button" onclick="init_chat();" value="开始" />
+				</div>
+				<div style="clear:both;"></div>
+        	</div>
+        	<div id="chat" style="display:none">
+        		<div id="chat_window">
+	 			</div>
+				<div id="faces">aaa</div>
+        		<div id="chat_bottom">
+        			<div id="disconnectwrapper" onclick="disconnect()">
+        				断开
+        			</div>
+	        			<textarea id="content" ></textarea>
+        			<div id="sendwrapper" onclick="send_bt()" >
+        				发送
+        			</div>
+        		</div>
+        	</div>
+        </div>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="js/city.js"></script>
+    </body>
+</html>

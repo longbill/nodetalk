@@ -1,0 +1,83 @@
+body { margin: 0;padding: 0; overflow:hidden; font-size:16px; color: #333;background-color:#ffe992;}
+div { margin:0;padding:0;}
+form { margin: 0;margin-top: 10px; }
+h1 { font-size:18px; }
+a { text-decoration: none; color: #49e; }
+a:hover { position:relative; top:1px;left:1px;}
+a img { border: 0;}
+.sending{ color: #ddd; }
+#header{ height: 81px; overflow: hidden;background-color: #fff;  }
+#header_content { border-bottom: 1px solid #ccc; height: 80px; }
+#header_content table { height: 80px; overflow: hidden;width:100%;}
+#main {  }
+.msg { display:none; overflow:hidden;height:20px;}
+.main_window {  margin: 20px; padding: 10px; border:1px solid #ccc; background-color:#fff; 
+-moz-border-radius: 10px;
+-khtml-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}
+#announcement{ clear:both; text-align:center;font-size:16px;color:#333;}
+#window { border: 1px solid #333; height: 400px; }
+#content { height: 50px; width: 100%; }
+#title { font-size: 16px; float:left; width:300px;}
+#online { _display:inline;height: 80px; float: right; width:200px;text-align: right;}
+#online_num { padding-right:20px;}
+#chat_window { overflow: auto; overflow-x:hidden; background-color:#fff; border:1px solid #ccc;
+-moz-border-radius: 10px;
+-khtml-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 10px;
+-moz-border-radius-bottomright:0px;
+-moz-border-radius-bottomleft:0px;
+
+-webkit-border-top-left-radius:10px;
+-webkit-border-top-right-radius:10px;
+-webkit-border-bottom-right-radius:0px;
+-webkit-border-bottom-left-radius:0px;
+
+margin: 20px;
+margin-bottom: 0px;
+padding: 0 10px;
+line-height: 20px;
+
+}
+#logo { float:left; }
+#top_ad{ float:left; }
+.notification { color: #333; }
+
+#chat_bottom { margin-top:10px; margin-left:20px; margin-right:20px;}
+#disconnectwrapper { _display:inline;overflow: hidden; background-color: #fff; border: 1px solid #ccc;width:110px; float: left; height:40px;-moz-border-radius-bottomleft:10px;-webkit-border-bottom-left-radius:10px; line-height:40px; text-align:center;cursor:pointer;}
+
+#content{_display:inline; margin-left: 10px;overflow: hidden; background-color: #fff; border: 1px solid #ccc; width: 200px;float:left; height:40px;padding: 0; font-size: 16px;line-height: 20px; }
+
+#sendwrapper { _display:inline;overflow: hidden; background-color: #fff; border: 1px solid #ccc;width:110px; float:right; height:40px;-moz-border-radius-bottomright:10px;-webkit-border-bottom-right-radius:10px;line-height: 40px; text-align: center;cursor:pointer; }
+
+
+.mywords
+{
+	color:#2a2a8f;
+}
+
+.hiswords
+{
+	color:#b400ac;
+}
+
+.option
+{
+	background-color:#aaa;
+	padding:4px;
+	float:left;
+	margin:3px;
+	cursor:pointer;
+}
+
+.option.on
+{
+	background-color:blue;
+	color:#fff;
+}
