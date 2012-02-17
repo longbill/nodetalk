@@ -1,7 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
     <head>
-        <title>{title} 聊天记录</title>
+        <title>{title}</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <style type="text/css">
         body {
@@ -43,7 +43,7 @@
     </head>
     <body>
         <div id="header">
-            <h1><a href="{url}">{title}</a> 聊天记录</h1>
+            <h1><a href="{url}">{title}</a></h1>
             <h2>{time}</h2>
         </div>
         <div id="log">

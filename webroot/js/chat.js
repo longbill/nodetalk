@@ -29,7 +29,7 @@ $(function()
 	
 	if (window.location.href.indexOf('#autostart') != -1)
 	{
-		setTimeout(start_options,10);
+		setTimeout(init_chat,10);
 	}
 	
 	load_online();
@@ -106,7 +106,7 @@ function init_chat()
 	if (user && user.id) return;
 	user.id = '';
 	user.to = '';
-	$('#options').fadeOut(300,function()
+	$('#description').fadeOut(300,function()
 	{
 		$('#chat').fadeIn(300,init_window);
 		init_window();
@@ -337,61 +337,3 @@ function disconnect(force)
 	show_notification(lang.you_disconnect);
 }
 
-
-function start_options()
-{
-	$('#description').fadeOut(300,function()
-	{
-		$('#options').fadeIn(300,init_window);
-		init_window();
-		setTimeout(init_window,1);
-	});
-}
-
-
-$(function()
-{
-	$('.city').live('click',function()
-	{
-		$('.city').removeClass('on');
-		$(this).addClass('on');
-		check_bt();
-	});
-	$('.sex').live('click',function()
-	{
-		$('.sex').removeClass('on');
-		$(this).addClass('on');
-		check_bt();
-	});
-	$('.he').live('click',function()
-	{
-		$('.he').removeClass('on');
-		$(this).addClass('on');
-		check_bt();
-	});
-	function check_bt()
-	{
-		var city = $('.city.on').html();
-		var sex = $('.sex.on').html();
-		var he = $('.he.on').html();
-		if (city && sex && he)
-		{
-			$('#begin-button').removeAttr('disabled');
-		}
-		else
-		{
-			$('#begin-button').attr('disabled','disabled');
-		}
-	}
-	
-	check_bt();
-});
-
-
-function show_city(data)
-{
-	for(var i=0;i<data.length;i++)
-	{
-		$('<div class="option city">'+data[i]+'</div>').appendTo('#cityarea');
-	}
-}
