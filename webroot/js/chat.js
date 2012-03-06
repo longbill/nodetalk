@@ -69,7 +69,7 @@ function load_online()
 	$.get('/onlines?t='+Math.random(),{ },function(s)
 	{
 		$('#online_num').html(s);
-		setTimeout(load_online,3000);
+		setTimeout(load_online,10000);
 	});
 }
 
@@ -182,7 +182,7 @@ function init_chat()
 			{
 				show_msg(lang.stranger+data);
 				stop_typing();
-				console.log(data);
+				//console.log(data);
 			});
 			
 			socket.on('userexit',function()
