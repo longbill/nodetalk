@@ -1,6 +1,11 @@
 {
 	"name": "nodetalk",
 	"version": "0.0.1",
+	"description": "",
+	"main": "app.js",
+	"engines": {
+	    "node": ">=0.6.0"
+	  },
 	"dependencies":
 	{
 		"express": ">=2.5.4",
