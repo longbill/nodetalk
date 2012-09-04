@@ -2,6 +2,8 @@
 
 This service program is written by Longbill ( longbill.cn@gmail.com ) at 2011-07-18
 
+This is a simple nodejs chatting app. It's a clone of omegle.com.
+
 ##Requires
 
 	Express
