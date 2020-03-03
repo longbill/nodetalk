@@ -9,6 +9,6 @@
 	"dependencies":
 	{
 		"express": "2.5.x",
-		"socket.io": "0.8.x"
+		"socket.io": "2.3.x"
 	}
 }
